@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function appmenu {
-  options="Cancel\nPavucontrol\nDiscord\nFirefox\nSpotify\nFile Manager\nThemes\nGimp\nKrita"
-  selected=$(echo -e $options | dmenu -c -p Run: -g 1 -l 9)
+  options="Cancel\nPavucontrol\nDiscord\nFirefox\nSteam\nLutris\nSpotify\nFile Manager\nThemes\nGimp\nKrita"
+  selected=$(echo -e $options | dmenu -c -p Run: -g 1 -l 11)
   if [[ $selected = "Cancel" ]]; then
     return
   elif [[ $selected = "Pavucontrol" ]]; then
@@ -21,6 +21,10 @@ function appmenu {
     gimp
   elif [[ $selected = "Krita" ]]; then
     krita
+  elif [[ $selected = "Steam" ]]; then
+    steam
+  elif [[ $selected = "Lutris" ]]; then
+    lutris
   fi
 }
 
