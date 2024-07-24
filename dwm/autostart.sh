@@ -5,7 +5,7 @@ wmname LG3D
 dunst -conf $HOME/.config/dunst/dunstrc &
 slstatus &
 nitrogen --restore &
-xrandr --output HDMI-A-1 --rate 60 &
+xrandr --output HDMI-A-1 --rate 60 --set TearFree on --dpi 100 &
 xrandr --output DisplayPort-0 --auto --right-of HDMI-A-1 --rotate right --dpi 100 &
 nm-applet &
 killall Discord
