@@ -5,7 +5,7 @@
 static const unsigned int borderpx       = 0;   /* border pixel of windows */
 static const int corner_radius           = 10;
 #else
-static const unsigned int borderpx       = 2;   /* border pixel of windows */
+static const unsigned int borderpx       = 3;   /* border pixel of windows */
 #endif // ROUNDED_CORNERS_PATCH
 static const unsigned int snap           = 32;  /* snap pixel */
 #if SWALLOW_PATCH
@@ -482,15 +482,17 @@ static const Rule rules[] = {
 	 *	WM_WINDOW_ROLE(STRING) = role
 	 *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
 	 */
+  { "discord",  NULL,     NULL,    NULL, 1 << 8,   0,          1 },
 	RULE(.wintype = WTYPE "DIALOG", .isfloating = 1)
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "Gimp", .tags = 1 << 6)
+  RULE(.class = "steam", .tags = 1 << 5)
+  RULE(.class = "Lutris", .tags = 1 << 5)
   RULE(.class = "krita", .tags = 1 << 6)
 	RULE(.class = "firefox", .tags = 1 << 1)
-  RULE(.class = "discord", .tags = 1 << 8)
-  RULE(.class = "Steam", .tags = 1 << 5)
+  /*RULE(.class = "discord", .tags = 1 << 8)*/
   RULE(.class = "Spotify", .tags = 1 << 7)
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
